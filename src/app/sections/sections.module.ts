@@ -13,6 +13,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
 
 import { MatCardModule } from '@angular/material/card'
 import { FlexLayoutModule } from '@angular/flex-layout'
+import { CardComponent } from '../card/card.component';
 
 
 
@@ -25,6 +26,8 @@ import { FlexLayoutModule } from '@angular/flex-layout'
     BarChartComponent,
     PieChartComponent,
     LineChartComponent,
+    CardComponent,
+
   ],
   imports: [
     CommonModule,
