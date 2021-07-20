@@ -11,6 +11,9 @@ import { PieChartComponent } from '../charts/pie-chart/pie-chart.component';
 import {LineChartComponent} from '../charts/line-chart/line-chart.component'
 import { HighchartsChartModule } from 'highcharts-angular';
 
+import { MatCardModule } from '@angular/material/card'
+import { FlexLayoutModule } from '@angular/flex-layout'
+
 
 
 
@@ -27,6 +30,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
     CommonModule,
     MatDividerModule,
     HighchartsChartModule,
+    MatCardModule,
+    FlexLayoutModule,
   ]
 })
 export class SectionsModule { }
