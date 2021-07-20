@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
+import HC_exporting from 'highcharts/modules/exporting';
+
 
 @Component({
   selector: 'app-bar-chart',
@@ -32,44 +34,56 @@ export class BarChartComponent implements OnInit {
     },
     subtitle: {
       text: 'Source: <a href="https://en.wikipedia.org/wiki/World_population">Wikipedia.org</a>'
-  },
-  xAxis: {
-    categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'],
-    title: {
-        text: null
-    }},
-yAxis: {
-    min: 0,
-    title: {
-        text: 'Population (millions)',
-        align: 'high'
     },
-    labels: {
-        overflow: 'justify'
-    }
-},
-tooltip: {
-    valueSuffix: ' millions'
-},
-plotOptions: {
-    bar: {
-        dataLabels: {
-            enabled: true
-        }
-    }
-},
-credits: {
-    enabled: false
-},
-exporting:{
-  enabled : true,
-}
+    xAxis: {
+      categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'],
+      title: {
+          text: null
+      }},
+      yAxis: {
+          min: 0,
+          title: {
+              text: 'Population (millions)',
+              align: 'high'
+          },
+          labels: {
+              overflow: 'justify'
+          }
+      },
+      tooltip: {
+          valueSuffix: ' millions'
+      },
+      plotOptions: {
+          bar: {
+              dataLabels: {
+                  enabled: true
+              }
+          }
+      },
+      credits: {
+          enabled: false
+      },
+      exporting:{
+        enabled : true,
+      }
 
-};
+  };
+
+  
 
   constructor() { }
 
   ngOnInit(): void {
+    HC_exporting(Highcharts);
+   
+    setTimeout(() => {
+      window.dispatchEvent(
+        new Event('resize')
+      );
+    }, 300);
+
+
+
   }
 
 }
