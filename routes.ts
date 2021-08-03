@@ -1,13 +1,22 @@
 import { Routes } from '@angular/router';
+import { LoginComponent } from 'src/app/login/login.component';
+import { MainComponent } from 'src/app/main/main.component';
 import { SectionDashboardComponent } from 'src/app/sections/section-dashboard/section-dashboard.component';
 import { SectionFormComponent } from 'src/app/sections/section-form/section-form.component';
 import { SectionHealthComponent } from 'src/app/sections/section-health/section-health.component';
 
 
 export const appRoutes: Routes = [
-    { path: 'dashboard', component: SectionDashboardComponent },
-    { path: 'health', component: SectionHealthComponent },
-    { path: 'form', component: SectionFormComponent },
-
-    { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
-];
+    {path: 'login', component: LoginComponent},
+    {path: '', component: MainComponent,
+      children: [
+        {
+            path: '',
+            redirectTo: '/dashboard',
+            pathMatch: 'full'
+          },
+        { path: 'dashboard', component: SectionDashboardComponent },
+        { path: 'health', component: SectionHealthComponent },
+        { path: 'form', component: SectionFormComponent }
+    ]}];
+  

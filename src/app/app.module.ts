@@ -31,6 +31,8 @@ import { FooterComponent } from './footer/footer.component';
 import { SectionsModule } from './sections/sections.module';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { ChartsModule } from '@rinminase/ng-charts';
+import { MainComponent } from './main/main.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { ChartsModule } from '@rinminase/ng-charts';
     // SectionDashboardComponent,
     // SectionFormComponent,
     SidebarComponent,
-    FooterComponent
+    FooterComponent,
+    MainComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
