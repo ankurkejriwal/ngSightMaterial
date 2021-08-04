@@ -9,7 +9,7 @@ import { SectionHealthComponent } from 'src/app/sections/section-health/section-
 
 export const appRoutes: Routes = [
     {path: 'login', component: LoginComponent},
-    {path: '', component: MainComponent,
+    {path: '', component: MainComponent,canActivate: [AuthGuard],
       children: [
         {
             path: '',
