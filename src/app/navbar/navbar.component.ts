@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +9,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
-  constructor() { }
+  constructor(private authservice: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +21,10 @@ export class NavbarComponent implements OnInit {
         new Event('resize')
       );
     }, 300);
+  }
+
+  onLogout() {
+    this.authservice.logout();
   }
 
 }
