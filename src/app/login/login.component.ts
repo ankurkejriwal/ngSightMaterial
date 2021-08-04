@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log('ON SUBMIT CLICKED!!');
     if (this.form.valid) {
       this.authService.login(this.form.value);
     }
