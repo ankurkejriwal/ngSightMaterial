@@ -21,6 +21,9 @@ export class SectionDashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    console.log(this.dashboardService.getStats());
+
     this.bigChart = this.dashboardService.bigChart();
     this.cards = this.dashboardService.cards();
     this.pieChart = this.dashboardService.pieChart();
